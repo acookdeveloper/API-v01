@@ -7,12 +7,15 @@ using System.Web.Http;
 
 namespace API_01.Controllers
 {
-    [Authorize]
+    //[Authorize] get this later
     public class ValuesController : ApiController
     {
         // GET api/values
         public IEnumerable<string> Get()
         {
+            //get database connection here
+
+
             return new string[] { "value1", "value2" };
         }
 
