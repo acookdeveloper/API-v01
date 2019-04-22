@@ -1,4 +1,5 @@
-﻿using System;
+﻿using API_01.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,13 +11,16 @@ namespace API_01.Controllers
     //[Authorize] get this later
     public class ValuesController : ApiController
     {
+        //Get all values from the database in the table from the model created > User_AuthController.cs
+        private API01Entities db = new API01Entities();
+
         // GET api/values
-        public IEnumerable<string> Get()
+        public IEnumerable<User_Auth> Get()
         {
             //get database connection here
 
 
-            return new string[] { "value1", "value2" };
+            return db.User_Auth.ToList();
         }
 
         // GET api/values/5
